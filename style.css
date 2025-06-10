@@ -1,0 +1,269 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            padding: 1.25rem;
+        }
+
+        .calculator {
+            background-color:rgb(14, 95, 129);
+            backdrop-filter: blur(2rem);
+            border-radius: 1.5rem;
+            padding: 1.25rem;
+            box-shadow: 0 1rem 2.02rem rgba(6, 132, 191, 0.2);
+            width:100%;
+            max-width:25rem;
+        }
+
+        .display {
+            background-color: rgba(219, 220, 219, 0.9);
+            padding: 1.2rem;
+            border-radius:  .75rem;
+            margin-bottom: 1.2rem;
+            text-align: right;
+            height: 8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .input-expression {
+            font-size: 2em;
+            color: #000000;
+            height: 3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom:.25rem;
+        }
+
+        .result {
+            font-size: 2em;
+            color: #000;
+            height: 3rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:.6rem ;
+        }
+
+        button {
+            padding: 1.25rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            color: rgba(7, 189, 206, 0.911);
+            background: rgb(255, 255, 255);
+            cursor:pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            box-shadow: 0 .5rem 1rem rgba(71, 52, 175, 0.536);
+            width: 100%;
+            background:rgba(219, 220, 219, 0.9);
+            transform: scale(1.05);
+        }
+
+        .operator {
+            background: rgba(52, 152, 219, 0.9);
+            color: white;
+        }
+
+        .operator:hover {
+            background: rgba(52, 152, 219, 0.607);
+        }
+
+        .equals {
+            background: rgba(46, 204, 113, 0.9);
+            color: white;
+        }
+
+        .equals:hover {
+            background: rgba(46, 204, 112, 0.56);
+        }
+
+        .clear {
+            background: rgba(198, 35, 35, 0.9);
+            color: white;
+        }
+
+        .clear:hover {
+            background: rgba(231, 76, 60, 1);
+        }
+
+        /* Extra Small Devices (phones, 320px and up) */
+        @media (max-width: 360px) {
+            .calculator {
+                padding: 1rem;
+                max-width: 100%;
+            }
+
+            .display {
+                padding: 1rem;
+                min-height: 5rem;
+            }
+
+            .input-expression {
+                font-size: 1.5em;
+            }
+
+            .result {
+                font-size: 1.8em;
+            }
+
+            button {
+                padding: 1rem;
+                font-size: 1.1em;
+            }
+        }
+
+        /* Small Devices (large phones, 361px and up) */
+        @media (min-width: 361px) and (max-width: 480px) {
+            .calculator {
+                padding: 1.2rem;
+                max-width: 100%;
+            }
+
+            .display {
+                padding: 1.2rem;
+                min-height: 5.5rem;
+            }
+
+            .input-expression {
+                font-size: 1.7em;
+            }
+
+            .result {
+                font-size: 1.9em;
+            }
+
+            button {
+                padding: 1.2rem;
+                font-size: 1.2em;
+            }
+        }
+
+        /* Medium Devices (tablets, 481px and up) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .calculator {
+                max-width: 400px;
+            }
+
+            .input-expression {
+                font-size: 1.8em;
+            }
+
+            .result {
+                font-size: 2em;
+            }
+
+            button {
+                padding: 1.3rem;
+                font-size: 1.3em;
+            }
+        }
+
+        /* Large Devices (desktops, 769px and up) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .calculator {
+                max-width: 450px;
+            }
+
+            .input-expression {
+                font-size: 1.9em;
+            }
+
+            .result {
+                font-size: 2.1em;
+            }
+
+            button {
+                padding: 1.4rem;
+                font-size: 1.4em;
+            }
+        }
+
+        /* Extra Large Devices (large desktops, 1025px and up) */
+        @media (min-width: 1025px) {
+            .calculator {
+                max-width: 500px;
+            }
+
+            .input-expression {
+                font-size: 2em;
+            }
+
+            .result {
+                font-size: 2.2em;
+            }
+
+            button {
+                padding: 1.5rem;
+                font-size: 1.5em;
+            }
+        }
+
+        /* Landscape Mode for Mobile Devices */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .calculator {
+                max-width: 90vw;
+                display: flex;
+                gap: 1.5rem;
+                padding: 1.2rem;
+            }
+
+            .display {
+                flex: 1;
+                margin-bottom: 0;
+                min-height: 4rem;
+            }
+
+            .buttons {
+                flex: 2;
+                gap: 0.5rem;
+            }
+
+            button {
+                padding: 1rem;
+                font-size: 1.2em;
+            }
+        }
+
+        /* High-DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .calculator {
+                box-shadow: 0 1rem 2rem rgba(6, 132, 191, 0.3);
+            }
+
+            button {
+                font-weight: 500;
+            }
+        }
+
+        /* Dark Mode Support */
+        /* @media (prefers-color-scheme: dark) {
+            .calculator {
+                background: rgba(53, 50, 50, 0.2);
+            }
+
+            .display {
+                background: rgba(255, 255, 255, 0.8);
+            }
+
+            button {
+                background: rgba(255, 255, 255, 0.8);
+            }
+        } */
